@@ -1,0 +1,30 @@
+project: polyp_cadx_debug
+seed: 42
+
+data:
+  root: data/processed/debug
+  train_dir: data/processed/debug/train
+  val_dir: data/processed/debug/val
+  image_suffix: .jpg
+  mask_suffix: .png
+  resize: [256, 256]
+  cache_rate: 0.0
+  num_workers: 0
+
+model:
+  name: swin_unetr_base
+  in_channels: 3
+  out_channels: 1
+  feature_size: 24
+
+training:
+  epochs: 1
+  batch_size: 1
+  lr: 5.0e-4
+  weight_decay: 1.0e-5
+  val_every: 1
+  amp: true
+  grad_clip: 1.0
+
+system:
+  device: cuda
