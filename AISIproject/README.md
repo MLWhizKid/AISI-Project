@@ -144,19 +144,29 @@ Colorectal polyp miss-rates directly impact preventive screening outcomes. We pl
 
 | 角色 Role | 职责 Responsibility |
 | --- | --- |
-| PM / 临床接口 PM & Clinical liaison | 需求对接、伦理合规、临床反馈收集 |
-| 数据负责人 Data lead | 数据卡、清洗、划分、外部测试安排 |
-| 模型-ViT Model lead (ViT) | Swin-UNETR/UNETR 训练与调参 |
-| 模型-Mamba Model lead (Mamba) | Mamba-UNet/MobileViM 复现与对比 |
-| 蒸馏与加速 Distillation & acceleration | SAM 蒸馏、量化/蒸馏/ONNX、推理优化 |
-| 评估与可视化 Evaluation & demo | 指标统计、误差分析、前端 Demo |
+| PM / 临床接口 PM & Clinical liaison | 需求对接、伦理合规、临床反馈收集Coordinate requirements, communicate with supervisors/clinicians, manage the project timeline, and support ethics/compliance discussions. |
+| 数据负责人 Data lead | 数据卡、清洗、划分、外部测试安排 Prepare the data card, handle cleaning and splitting, and design cross-dataset evaluation scenarios.|
+| 模型-ViT Model lead (ViT) | Swin-UNETR/UNETR 训练与调参 Implement, train, and tune Swin-UNETR / UNETR and other ViT-based models, and maintain training logs.|
+| 模型-Mamba Model lead (Mamba) | Mamba-UNet/MobileViM 复现与对比 Reproduce and evaluate Mamba-UNet / MobileViM and other advanced backbones for comparison. |
+| 蒸馏与加速 Distillation & acceleration | SAM 蒸馏、量化/蒸馏/ONNX、推理优化 Design and implement SAM / MedSAM distillation, model distillation/quantization, ONNX/TensorRT export, and inference optimization.|
+| 评估与可视化 Evaluation & demo | 指标统计、误差分析、前端 Demo Handle metric computation, error analysis, visualization, and frontend demos (e.g., Streamlit / Gradio). |
 
 ---
 
 ## 12. 下一步 / Next Steps
 
-1. 搭建数据处理脚本与数据卡模板（含许可/偏倚描述）。
-2. 复现 Swin-UNETR 基线，建立训练/验证流水线。
-3. 引入 SAM 蒸馏与时序增强，记录提升幅度。
-4. 完成 Mamba-UNet/MobileViM 对比实验。
-5. 进行跨域测试、误差分析与轻量化部署，最终包装为交互式 Demo。
+1.搭建数据处理脚本与数据卡模板，明确许可与偏倚描述。
+Build data preprocessing scripts and a data card template, including licensing and bias descriptions.
+
+2.复现 Swin-UNETR 基线模型，搭建完整的训练 / 验证流水线。
+Reproduce the Swin-UNETR baseline and set up a full training/validation pipeline.
+
+3.引入 SAM / MedSAM 蒸馏与时序增强模块，量化其带来的性能提升。
+Integrate SAM / MedSAM distillation and temporal augmentation modules, and measure the performance gains.
+
+4.完成 Mamba-UNet / MobileViM 等模型的复现与对比实验。
+Reproduce and compare Mamba-UNet / MobileViM and related models.
+
+5.开展跨域测试、误差分析与轻量化部署实验，最终包装为可交互的实时 Demo。
+Conduct cross-domain tests, error analysis, and lightweight deployment experiments, and finally wrap everything into an interactive real-time demo.
+
